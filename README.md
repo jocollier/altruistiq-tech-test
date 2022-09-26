@@ -27,7 +27,7 @@ npm test
 
 -----
 
-### Desisions: 
+### Decisions: 
 
 
 

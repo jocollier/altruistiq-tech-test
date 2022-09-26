@@ -13,7 +13,7 @@ in `.env` you will need the [footprint api](https://data.footprintnetwork.org/#/
 
 ### Run
 Code automatically reloads upon code changes. 
-The backend runs on port 5000, go to `http://localhost:5000/` to 
+The backend runs on port 3000, go to `http://localhost:3000/` to 
 
 ```bash
 npm start

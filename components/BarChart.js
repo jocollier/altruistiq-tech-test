@@ -3,7 +3,7 @@ import Graph from "./Graph"
 import GraphHeader from './GraphHeader'
 import styles from '../styles/GraphContainer.module.scss'
 
-const BarChart2 = ({ data }) => {
+const BarChart = ({ data }) => {
     const [years] = useState(Object.keys(data))
     const [currentYear, setCurrentYear] = useState(Object.keys(data)[0])
     const [specificData, setSpecificData] = useState(data[Object.keys(data)[0]])
@@ -37,4 +37,4 @@ const BarChart2 = ({ data }) => {
     )
 }
 
-export default BarChart2
+export default BarChart

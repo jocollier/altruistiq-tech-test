@@ -1,0 +1,36 @@
+.barGroup {
+    transition: opacity 0.3s;
+
+    .nameLabel {
+        text-anchor: end;
+        font-weight: 300;
+        font-size: 1em;
+        fill: #333;
+    }
+
+    .valueLabel {
+        text-anchor: end;
+        fill: black;
+        font-weight: 900;
+        font-size: 0.7em;
+    }
+
+    &:hover {
+        .nameLabel {
+            font-weight: 400;
+        }
+
+        .valueLabel {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.svgPanel {
+    box-sizing: border-box;
+    width: 1000px;
+    height: 323px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+}

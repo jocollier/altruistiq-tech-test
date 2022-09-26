@@ -1,0 +1,51 @@
+.container {
+    min-width: 600px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 20%;
+    grid-auto-flow: row;
+    grid-template-areas: "yearTitle totalTitle"
+        "yearData totalData";
+}
+
+.title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #808080;
+}
+
+.data {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 68px;
+    text-align: center;
+    color: #0F6F6F;
+}
+
+.yearTitle {
+    justify-self: center;
+    align-self: center;
+    grid-area: yearTitle;
+}
+
+.yearData {
+    justify-self: center;
+    align-self: start;
+    grid-area: yearData;
+}
+
+.totalData {
+    justify-self: center;
+    align-self: start;
+    grid-area: totalData;
+}
+
+.totalTitle {
+    justify-self: center;
+    align-self: center;
+    grid-area: totalTitle;
+}

@@ -1,34 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Altruistiq hiring assessment
 
-## Getting Started
+### Get Started
 
-First, run the development server:
-
+### Install
+Clone this repo, then
 ```bash
-npm run dev
-# or
-yarn dev
+npm i
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+in `.env` you will need the [footprint api](https://data.footprintnetwork.org/#/api) API key.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Run
+Code automatically reloads upon code changes. 
+The backend runs on port 5000, go to `http://localhost:5000/` to 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+npm start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Run tests
+To run test the backend needs to be running (code and tests are being watched so automatically reruns).
+```
+npm test
+```
 
-## Learn More
+-----
 
-To learn more about Next.js, take a look at the following resources:
+### Desisions: 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+-----
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<details>
+  <summary>Tech Test Info</summary>
+  
+
+    ### Objective
+    In this task you'll be creating an application consisting of an API, and a frontend consuming that API and rendering a chart.<br/><br/>
+    The goal is not the create the most complete app, but to understand how you solve problems and how you code. Upon delivering the app, we will discuss your solutions, decisions and thought process. 
+
+    We suggest to not spent more than 2 hours, but you're free to spend more time. And don't worry if it takes you longer.
+    Also it's fine to descope parts of the task, that's really up to you.
+
+    ### Get Started
+    This repo will help you to kick-start your application. A backend has been setup for you, but for the frontend you're free to use anything you like. For Vue we suggest Vite, for React Create-React-App. It's also totally fine to use Next/Nuxt for the whole project and copy over the provided code. Whatever stack works for you!
+
+
+    # Tasks
+    Please read through all the tasks to understand the full scope of this assessment.
+
+    ## Task 1 - Create an API that returns the total emission per country per year
+    To get the data for this API, you will use the [footprint api](https://data.footprintnetwork.org/#/api) which has already
+    been setup for you. Use as follows:
+
+    ```js
+    import footprintApi from './footprintApi'
+
+    // get all countries and their countryCodes
+    await footprintApi.getCountries()
+
+    // this will give you carbon data per year for that country
+    await footprintApi.getDataForCountry(countryCode)
+
+    ```
+
+    The emissions number is represented in the country json as `carbon`, this is the number you're looking for.
+
+    Note: there are (unknown) rate limits on the footprint API which you will need to work around.
+
+    ## Task 2 - Write test(s)
+    Write test(s) to make sure your API works as expected.
+
+    ## Task 3 - Create an animated chart
+    Create a chart as per this example, but style it as per the Figma design. The chart iterates through the available years, and shows for each year a list of countries sorted by the emission for that year. Note that some countries do not have data for a specific year.<br/><br/>
+    ![https://miro.medium.com/max/1600/1*37uCN6y1WyLukxwCadhWRw.gif](https://miro.medium.com/max/1600/1*37uCN6y1WyLukxwCadhWRw.gif)
+
+    Fetch [this Figma file](https://www.figma.com/file/WJ1BvQzvFchIFxo67iIywi/Altruistiq-frontend-hiring-task) to get started.
+
+    The font used is
+    ```
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap')
+    ```
+
+    Requirements:
+    - use Vue or React, and Sass
+    - use either components, native DOM or D3 to create the chart.
+    - do not use chart / css / component / animation / caching libraries. The idea is that you show your skills by coding this manually.
+    - chart should be responsive, test by changing the window size (dragging)
+    - calculate and show world total footprint on the page
+
+    # Deliver your result
+    Please provide a git repository with your code and send us the url.
+</details>
+
